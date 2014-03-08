@@ -3,7 +3,8 @@ var nounsArray;
 var modifiersArray;
 
 // Load data from json
-var seedGenerator = function(json) {
+
+function seedGenerator(json) {
     adjectivesArray = json.adjectives;
     nounsArray = json.nouns;
     modifiersArray = json.modifiers;
@@ -11,13 +12,13 @@ var seedGenerator = function(json) {
 
 seedGenerator(window.genrationSeeds);
 
-// Return a random value from the array
-
-function randomArray(a) {
-    return a[Math.floor(Math.random() * a.length)];
-}
+// Will return an array with the generated values.
 
 function runGenerator() {
+    // Return a random value from the array
+    function randomArray(a) {
+        return a[Math.floor(Math.random() * a.length)];
+    };
     var adjective = randomArray(adjectivesArray);
     var noun = randomArray(nounsArray);
 
@@ -29,11 +30,13 @@ function runGenerator() {
             return "";
         }
     }
-
     var modifier = getmodifier();
+    return [adjective, noun, modifier];
+}
 
-    var output = (adjective + " " + noun + " " + modifier);
+// Will add the generators output to the DOM.
 
+function addToDom(output) {
     $("#output").html("<p>" + output + "</p>");
 
     $(".element").share({
@@ -60,10 +63,10 @@ function runGenerator() {
             link: "http://krystalfister.github.io/Startup/"
         }
     });
-
-    return output;
 }
 
-function sentence() {
-    runGenerator();
+function clickHandler() {
+    addToDom(
+        runGenerator().join(" ")
+    )
 }

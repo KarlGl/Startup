@@ -2,7 +2,7 @@
 
 // // Router
 // app.Router.map(function() {
-//   this.route('foo');
+//   // this.route('idea', );
 // });
 
 // // Routes 
