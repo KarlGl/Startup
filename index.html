@@ -1,18 +1,29 @@
 <html>
 <head>
+	<script src="js/lib/jquery.js"></script>
+	<!-- Libraries you need for to make it in ember.js -->
+	<script src="js/lib/handlebars.js"></script>
+	<script src="js/lib/ember.js"></script>
+	<!--  -->
+	
+<!-- INSERT EMBER TEMPLATES HERE -->
+	<script type="text/x-handlebars" src="/templates/index.hbs" data-template-name="index">
+		
+	</script>
+<!--  -->
+
+
+	<script src="js/frontend.js"></script>
+	<script src="data/generation_seeds.js"></script>
+	<script src="js/generator.js"></script>
+	<script src="js/lib/share.min.js"></script>
+
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/png">
 	<link rel="stylesheet" href="css/style.css">
-	
-	<!-- JQuery -->
-	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	
 	<!-- Scale nicely for mobile devices -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- js -->
-	<script src="data/generation_seeds.js"></script>
-	<script src="js/generator.js"></script>
-	<script src="js/lib/share.min.js"></script>
 	<title>Startup Idea Generator</title>
 
 	<!-- Start metadata -->
@@ -56,21 +67,5 @@
 	</script>	
 </head>
 <body>
-	<div class="container">
-		<div class="main">
-			<h1>What's my startup idea?</h1>
-			<p>Click to generate ideas</p>
-			<button class="btn" onclick="sentence()">Generate</button>
-			<div class="content">
-				<div id="output"></div>
-				<div class="element"></div>
-			</div>
-		</div>
-			<div id="footer">
-				<p class="footerCredit">&copy Krystal Maria Fister</p>
-				<p class="footer">Am I missing a few good startup ideas? Tweet me  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Enter your startup idea suggestion here" data-via="krystalfister" data-count="none" data-hashtags="startupideas">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</div>
-	</div>
 </body>
 </html>
