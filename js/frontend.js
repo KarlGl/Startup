@@ -1,20 +1,20 @@
-// var app = Ember.Application.create()
+// var app = Ember.Application.create();
 
 // // Router
 // app.Router.map(function() {
-//   this.route('foo');
+//   // this.route('foo' {path: 'foo'});
 // });
 
 // // Routes 
-// app.IndexRoute = Ember.Route.extend({
-// })
+// app.ApplicationRoute = Ember.Route.extend({
+// });
 
 // // Controllers
-// app.IndexController = Ember.Controller.extend({
+// app.ApplicationController = Ember.Controller.extend({
 // });
 
 // // Views
-// app.IndexView = Ember.View.extend({
-// })
+// app.ApplicationView = Ember.View.extend({
+// });
 
 // window.App = app;
