@@ -1,4 +1,5 @@
-{
+// Global access to the generation seeds: to allow us to load the generation seed data without using an xhr request (now we can test without a server).
+window.genrationSeeds = {
     "adjectives": [
         "3D printed",
         "A cross between Facebook and your",

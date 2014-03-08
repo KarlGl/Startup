@@ -3,11 +3,13 @@ var nounsArray;
 var modifiersArray;
 
 // Load data from json
-$.getJSON("data/data.json", function(json) {
+var seedGenerator = function(json) {
 	adjectivesArray = json.adjectives;
 	nounsArray = json.nouns;
 	modifiersArray = json.modifiers;
-});
+};
+
+seedGenerator(window.genrationSeeds);
 
 // Return a random value from the array
 function randomArray(a) {
