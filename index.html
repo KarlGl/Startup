@@ -10,6 +10,9 @@
 	<script type="text/x-handlebars" id="idea">
 		{{content}}
 	</script>
+	<script type="text/x-handlebars" id="seeds">
+		{{content}}
+	</script>
 	<script type="text/x-handlebars">
 
 		<div class="container">
@@ -26,9 +29,9 @@
 			</div>
 				<div id="footer">
 					<p class="footerCredit">&copy Krystal Maria Fister</p>
-					<p class="footer">
-
-					</p>
+					{{#link-to 'seeds' class="footer"}}
+						Modify Seeds!
+					{{/link-to}}
 				</div>
 		</div>
 		
