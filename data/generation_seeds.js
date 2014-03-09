@@ -193,3 +193,8 @@ window.genrationSeeds = {
         "with a beautiful UI"
     ]
 }
+
+var persistedSeeds = JSON.parse(localStorage.getItem('seeds'));
+if (persistedSeeds) {
+    window.genrationSeeds = persistedSeeds;
+}

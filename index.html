@@ -16,6 +16,12 @@
 		<button {{action deleteAll}}>Clear this bitch</button>
 		{{#each type in types}}
 			<h3>{{type.name}}</h3>
+
+			{{input value = newType}}
+			<button {{action addNew type.name newType}}>
+				Add New
+			</button>
+			
 			<div>
 				{{#each seed in type.list}}
 					<div>

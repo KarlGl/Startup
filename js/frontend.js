@@ -49,8 +49,15 @@ app.SeedsController = Ember.Controller.extend(
             this.set("content", newV)
             seedGenerator(newV)
             window.genrationSeeds = newV
+            localStorage.setItem('seeds', JSON.stringify(newV))
         },
+
         actions: {
+            addNew: function(typeName, newV) {
+                this.get('content')[typeName]
+                    .pushObject(newV);
+                this.changeSeeds(this.get('content'));
+            },
             deleteAll: function() {
                 this.changeSeeds({
                     "adjectives": [],
@@ -59,6 +66,7 @@ app.SeedsController = Ember.Controller.extend(
                 });
             },
         },
+
         allWords: function() {
             return Object.keys(
                 this.get('content')).reduce(function(rt, key) {
@@ -77,7 +85,10 @@ app.SeedsController = Ember.Controller.extend(
                 name: 'modifiers',
                 list: this.filter.call(this, this.get('content.modifiers'))
             }];
-        }.property('search', 'content')
+        }.property('search', 'content',
+            'content.adjectives.length',
+            'content.modifiers.length',
+            'content.nouns.length')
     });
 
 // Views
