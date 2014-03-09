@@ -36,14 +36,29 @@ app.IdeaController = Ember.Controller.extend({});
 var filterModule = {
     search: "",
     filter: function(words) {
-        return words.filter(function(word) {
-            return (word.indexOf(this.get('search')) > -1);
-        }.bind(this))
+        if (words)
+            return words.filter(function(word) {
+                return (word.indexOf(this.get('search')) > -1);
+            }.bind(this))
     }
 };
 
 app.SeedsController = Ember.Controller.extend(
     filterModule, {
+        changeSeeds: function(newV) {
+            this.set("content", newV)
+            seedGenerator(newV)
+            window.genrationSeeds = newV
+        },
+        actions: {
+            deleteAll: function() {
+                this.changeSeeds({
+                    "adjectives": [],
+                    "nouns": [],
+                    "modifiers": []
+                });
+            },
+        },
         allWords: function() {
             return Object.keys(
                 this.get('content')).reduce(function(rt, key) {
@@ -62,7 +77,7 @@ app.SeedsController = Ember.Controller.extend(
                 name: 'modifiers',
                 list: this.filter.call(this, this.get('content.modifiers'))
             }];
-        }.property('search')
+        }.property('search', 'content')
     });
 
 // Views
