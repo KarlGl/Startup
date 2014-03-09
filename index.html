@@ -2,6 +2,7 @@
 <head>
 	<script src="js/lib/jquery.js"></script>
 	<!-- Libraries you need for to make it in ember.js -->
+	<script src="js/lib/underscore.js"></script>
 	<script src="js/lib/handlebars.js"></script>
 	<script src="js/lib/ember.js"></script>
 	<!--  -->
@@ -11,8 +12,7 @@
 		{{content}}
 	</script>
 	<script type="text/x-handlebars" id="seeds">
-	{{allWords}}
-		Search: {{input value=search}}
+		<div>Search: {{input value=search}} {{search}}</div>
 		{{#each type in types}}
 			<h3>{{type.name}}</h3>
 			<div>
