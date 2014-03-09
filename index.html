@@ -13,6 +13,7 @@
 	</script>
 	<script type="text/x-handlebars" id="seeds">
 		<div>Search: {{input value=search}} {{search}}</div>
+		<button {{action deleteAll}}>Clear this bitch</button>
 		{{#each type in types}}
 			<h3>{{type.name}}</h3>
 			<div>
