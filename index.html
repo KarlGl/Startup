@@ -11,7 +11,18 @@
 		{{content}}
 	</script>
 	<script type="text/x-handlebars" id="seeds">
-		{{content}}
+	{{allWords}}
+		Search: {{input value=search}}
+		{{#each type in types}}
+			<h3>{{type.name}}</h3>
+			<div>
+				{{#each seed in type.list}}
+					<div>
+						{{seed}}
+					</div>
+				{{/each}}
+			</div>
+		{{/each}}
 	</script>
 	<script type="text/x-handlebars">
 
