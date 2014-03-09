@@ -19,7 +19,7 @@ app.IdeaRoute = Ember.Route.extend({
 app.ApplicationController = Ember.Controller.extend({
 	actions: {
 		generate: function() {
-			this.transitionToRoute('idea', 'test');
+			this.transitionToRoute('idea', runGenerator().join(" "));
 		}
 	}
 })
