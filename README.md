@@ -1,3 +1,6 @@
+
+You can email me here if you get stuck on any of these steps: kg@papercloud.com.au
+
 LEVEL 1
 ===
 1.  Clone the startup generator:
@@ -54,9 +57,11 @@ LEVEL 1
 	id="route_name"
 	```
 
-6.  Add a generate action on index controller, make it:
-	
-    transitionToRoute 'route_name' with 'text'
+6.  Add a generate action on the **Application** controller, make it:
+
+    ```
+    transitionToRoute 'route_name' with window.runGenerator().join(" ")
+    ````
 
 LEVEL 2
 ===
@@ -167,7 +172,6 @@ LEVEL 5: BONUS LEVEL: BUILD TOOLS:
 	git clone git@github.com:KarlGl/gulp-ember-skeliton.git
 
 put all your templates in the js/templates folder.
-
 
 
 
