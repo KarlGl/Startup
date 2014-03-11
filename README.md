@@ -1,4 +1,3 @@
-
 You can email me here if you get stuck on any of these steps: kg@papercloud.com.au
 
 LEVEL 1
@@ -139,6 +138,10 @@ LEVEL 4
             localStorage.setItem('seeds', JSON.stringify(newV))
     },
     ```
+    
+15.  Notice this won't work untill the types function observes 'content'
+
+15.  Add input helpers for adding new types {{input value=newType}} 
 
 15.  Button to add new seed. 
 
@@ -153,7 +156,7 @@ LEVEL 4
     this.changeSeeds(this.get('content'));
   ```
 
-16.  Types must observe:
+16.  Normal types also must observe the, but we are setting content each time anyway...
 
 		'content.adjectives.length'
 
