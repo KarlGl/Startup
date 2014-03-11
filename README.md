@@ -43,7 +43,9 @@ LEVEL 1
 
 
 	```
-	model: function(params)
+	model: function(params) {
+	  return params.idea_string;
+	}
 	```
 
 5.  Another template with the id attribute set:
